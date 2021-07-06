@@ -23,6 +23,7 @@ jobs:
           - "8.0"
         operating-system:
           - "ubuntu-latest"
+        tools: composer-require-checker
 
     steps:
       - name: "Checkout"
@@ -63,4 +64,4 @@ jobs:
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Check"
-        run: "bin/composer-require-checker"
+        run: "composer-require-checker check"
