@@ -46,6 +46,6 @@ repository:
   has_pages: false
   has_projects: false
   has_wiki: false
-  name: "php-project-template"
+  name: "php-template-project"
   private: false
   topics: "php, template"
