@@ -23,7 +23,6 @@ jobs:
           - "8.0"
         operating-system:
           - "ubuntu-latest"
-        tools: composer-require-checker
 
     steps:
       - name: "Checkout"
@@ -35,6 +34,7 @@ jobs:
           coverage: "pcov"
           php-version: "${{ matrix.php-version }}"
           ini-values: memory_limit=-1
+          tools: composer-require-checker
 
       - name: Get Composer cache directory
         id: composer-cache
