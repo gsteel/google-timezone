@@ -12,7 +12,6 @@ use JsonSerializable;
 use function assert;
 use function is_array;
 use function is_float;
-use function is_numeric;
 use function json_decode;
 use function preg_match;
 use function random_int;
@@ -65,8 +64,6 @@ final class Coordinates implements JsonSerializable
                 'Coordinate strings must have fractional digits and a decimal point such as "1.23,1.23"'
             );
         }
-
-        assert(is_numeric($match[1]) && is_numeric($match[2]));
 
         return self::fromDecimal((float) $match[1], (float) $match[2]);
     }
