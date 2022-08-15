@@ -102,7 +102,7 @@ class CoordinatesTest extends TestCase
     public function testInvalidJsonFormat(string $json): void
     {
         $this->expectException(InvalidArgument::class);
-        $this->expectExceptionMessage('recognisable format');
+        $this->expectExceptionMessage('JSON value did not decode to a recognisable format: ' . $json);
         Coordinates::fromJsonString($json);
     }
 
@@ -147,6 +147,8 @@ class CoordinatesTest extends TestCase
             ['foo, 1.23'],
             ['foo'],
             ['1,1'],
+            ['1.0,2.0foo'],
+            ['foo1.0,2.0'],
         ];
     }
 
