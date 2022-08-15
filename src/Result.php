@@ -29,24 +29,6 @@ final class Result
     ];
 
     /**
-     * @var non-empty-string
-     * @psalm-var value-of<self::STATUS_VALUES>
-     */
-    private string $status;
-    private ?int $dstOffset;
-    /** @var non-empty-string|null */
-    private ?string $errorMessage;
-    private ?int $utcOffset;
-    /** @var non-empty-string|null */
-    private ?string $timezone;
-    /** @var non-empty-string|null */
-    private ?string $name;
-    private Coordinates $coordinates;
-    /** @var non-empty-string|null */
-    private ?string $language;
-    private DateTimeInterface $referenceDate;
-
-    /**
      * @param non-empty-string|null $errorMessage
      * @param non-empty-string|null $timezone
      * @param non-empty-string|null $name
@@ -54,25 +36,16 @@ final class Result
      * @psalm-param value-of<self::STATUS_VALUES> $status
      */
     private function __construct(
-        string $status,
-        ?int $dstOffset,
-        ?string $errorMessage,
-        ?int $utcOffset,
-        ?string $timezone,
-        ?string $name,
-        Coordinates $coordinates,
-        ?string $language,
-        DateTimeInterface $referenceDate
+        private string $status,
+        private ?int $dstOffset,
+        private ?string $errorMessage,
+        private ?int $utcOffset,
+        private ?string $timezone,
+        private ?string $name,
+        private Coordinates $coordinates,
+        private ?string $language,
+        private DateTimeInterface $referenceDate
     ) {
-        $this->status        = $status;
-        $this->dstOffset     = $dstOffset;
-        $this->errorMessage  = $errorMessage;
-        $this->utcOffset     = $utcOffset;
-        $this->timezone      = $timezone;
-        $this->name          = $name;
-        $this->coordinates   = $coordinates;
-        $this->language      = $language;
-        $this->referenceDate = $referenceDate;
     }
 
     /**
