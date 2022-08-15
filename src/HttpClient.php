@@ -25,30 +25,17 @@ final class HttpClient implements Client
 {
     private const BASE_URI = 'https://maps.googleapis.com/maps/api/timezone/json';
 
-    private ClientInterface $httpClient;
-    private UriFactoryInterface $uriFactory;
-    private RequestFactoryInterface $requestFactory;
-    /** @var non-empty-string */
-    private string $apiKey;
-    /** @var non-empty-string */
-    private string $baseUri;
-
     /**
      * @param non-empty-string $apiKey
      * @param non-empty-string $baseUri
      */
     public function __construct(
-        string $apiKey,
-        ClientInterface $httpClient,
-        UriFactoryInterface $uriFactory,
-        RequestFactoryInterface $requestFactory,
-        string $baseUri = self::BASE_URI
+        private string $apiKey,
+        private ClientInterface $httpClient,
+        private UriFactoryInterface $uriFactory,
+        private RequestFactoryInterface $requestFactory,
+        private string $baseUri = self::BASE_URI
     ) {
-        $this->apiKey         = $apiKey;
-        $this->httpClient     = $httpClient;
-        $this->uriFactory     = $uriFactory;
-        $this->requestFactory = $requestFactory;
-        $this->baseUri        = $baseUri;
     }
 
     /**

@@ -158,11 +158,9 @@ class HttpClientTest extends TestCase
     }
 
     /**
-     * @param mixed $status
-     *
      * @dataProvider invalidStatusValues
      */
-    public function testAnExceptionIsThrownForAnInvalidStatus($status): void
+    public function testAnExceptionIsThrownForAnInvalidStatus(mixed $status): void
     {
         $this->http->expects(self::once())
             ->method('sendRequest')
