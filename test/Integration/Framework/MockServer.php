@@ -28,19 +28,12 @@ final class MockServer
     public const VALID_KEY             = 'valid_key';
     public const INVALID_KEY           = 'invalid_key';
 
-    /** @var LoopInterface */
-    private $loop;
-    /** @var HttpServer */
-    private $server;
-    /** @var SocketServer */
-    private $socket;
+    private LoopInterface $loop;
+    private HttpServer $server;
+    private SocketServer $socket;
 
-    /**
-     * Seconds before the server shuts down automatically
-     *
-     * @var int
-     */
-    private $timeout = 2;
+    /** Seconds before the server shuts down automatically */
+    private int $timeout = 2;
 
     /**
      * @var array<string, array{
@@ -52,13 +45,10 @@ final class MockServer
      *     bodyMatcher: callable|null
      * }>
      */
-    private $responses;
-    /** @var string */
-    private $basePath;
+    private array $responses;
 
-    public function __construct(int $port, string $basePath)
+    public function __construct(int $port)
     {
-        $this->basePath = $basePath;
         $this->seedResponses();
         $this->loop   = Loop::get();
         $this->server = new HttpServer($this->loop, function (RequestInterface $request): ResponseInterface {

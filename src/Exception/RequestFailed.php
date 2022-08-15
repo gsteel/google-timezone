@@ -11,10 +11,8 @@ use Throwable;
 
 final class RequestFailed extends RuntimeException implements Exception
 {
-    /** @var RequestInterface|null */
-    private $request;
-    /** @var ResponseInterface|null */
-    private $response;
+    private ?RequestInterface $request   = null;
+    private ?ResponseInterface $response = null;
 
     public static function withNetworkFailure(RequestInterface $request, Throwable $error): self
     {

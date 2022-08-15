@@ -26,14 +26,9 @@ final class Coordinates implements JsonSerializable
 {
     public const DEFAULT_PRECISION = 7;
 
-    /** @var int */
-    private $precision;
-
-    /** @var float */
-    private $latitude;
-
-    /** @var float */
-    private $longitude;
+    private int $precision;
+    private float $latitude;
+    private float $longitude;
 
     private function __construct(float $latitude, float $longitude, int $precision = self::DEFAULT_PRECISION)
     {
