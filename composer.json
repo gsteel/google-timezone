@@ -13,7 +13,6 @@
     "homepage": "https://github.com/gsteel/google-timezone",
     "require": {
         "php": "~8.0 || ~8.1",
-        "ext-json": "*",
         "fig/http-message-util": "^1.1",
         "psr/http-client": "^1.0",
         "psr/http-client-implementation": "*",
