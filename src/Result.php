@@ -32,23 +32,19 @@ final class Result
      * @var non-empty-string
      * @psalm-var value-of<self::STATUS_VALUES>
      */
-    private $status;
-    /** @var int|null */
-    private $dstOffset;
+    private string $status;
+    private ?int $dstOffset;
     /** @var non-empty-string|null */
-    private $errorMessage;
-    /** @var int|null */
-    private $utcOffset;
+    private ?string $errorMessage;
+    private ?int $utcOffset;
     /** @var non-empty-string|null */
-    private $timezone;
+    private ?string $timezone;
     /** @var non-empty-string|null */
-    private $name;
-    /** @var Coordinates */
-    private $coordinates;
+    private ?string $name;
+    private Coordinates $coordinates;
     /** @var non-empty-string|null */
-    private $language;
-    /** @var DateTimeInterface */
-    private $referenceDate;
+    private ?string $language;
+    private DateTimeInterface $referenceDate;
 
     /**
      * @param non-empty-string|null $errorMessage

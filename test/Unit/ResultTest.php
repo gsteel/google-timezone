@@ -15,8 +15,7 @@ use function assert;
 
 class ResultTest extends TestCase
 {
-    /** @var DateTimeImmutable */
-    private $date;
+    private DateTimeImmutable $date;
 
     protected function setUp(): void
     {

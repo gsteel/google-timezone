@@ -12,7 +12,7 @@
     ],
     "homepage": "https://github.com/gsteel/google-timezone",
     "require": {
-        "php": "^7.3 || ~8.0 || ~8.1",
+        "php": "^7.4 || ~8.0 || ~8.1",
         "ext-json": "*",
         "fig/http-message-util": "^1.1",
         "psr/http-client": "^1.0",
@@ -53,7 +53,7 @@
             "infection/extension-installer": true
         },
         "platform": {
-            "php": "7.3.99"
+            "php": "7.4.99"
         },
         "sort-packages": true
     },

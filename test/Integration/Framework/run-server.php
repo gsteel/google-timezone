@@ -12,7 +12,5 @@ if (! is_numeric($port)) {
     throw new InvalidArgument('Port argument must be a number');
 }
 
-$basePath = $argv[2] ?? '/some/path';
-
-$server = new MockServer((int) $port, $basePath);
+$server = new MockServer((int) $port);
 $server->start();

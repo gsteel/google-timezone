@@ -24,16 +24,14 @@ use const JSON_THROW_ON_ERROR;
 final class HttpClient implements Client
 {
     private const BASE_URI = 'https://maps.googleapis.com/maps/api/timezone/json';
-    /** @var ClientInterface */
-    private $httpClient;
-    /** @var UriFactoryInterface */
-    private $uriFactory;
-    /** @var RequestFactoryInterface */
-    private $requestFactory;
+
+    private ClientInterface $httpClient;
+    private UriFactoryInterface $uriFactory;
+    private RequestFactoryInterface $requestFactory;
     /** @var non-empty-string */
-    private $apiKey;
+    private string $apiKey;
     /** @var non-empty-string */
-    private $baseUri;
+    private string $baseUri;
 
     /**
      * @param non-empty-string $apiKey

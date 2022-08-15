@@ -12,8 +12,7 @@ use Laminas\Diactoros\UriFactory;
 
 class HttpClientTest extends RemoteIntegrationTestCase
 {
-    /** @var HttpClient */
-    private $client;
+    private HttpClient $client;
 
     protected function setUp(): void
     {

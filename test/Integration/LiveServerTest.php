@@ -18,8 +18,7 @@ use function is_string;
 
 final class LiveServerTest extends TestCase
 {
-    /** @var HttpClient */
-    private $client;
+    private HttpClient $client;
 
     protected function setUp(): void
     {

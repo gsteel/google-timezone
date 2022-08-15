@@ -25,11 +25,9 @@ use function sprintf;
 class HttpClientTest extends TestCase
 {
     /** @var ClientInterface&MockObject */
-    private $http;
-    /** @var HttpClient */
-    private $client;
-    /** @var DateTimeImmutable */
-    private $date;
+    private ClientInterface $http;
+    private HttpClient $client;
+    private DateTimeImmutable $date;
 
     protected function setUp(): void
     {
