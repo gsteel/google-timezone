@@ -1,46 +1,64 @@
 {
-    "name": "gsteel/php-template-project",
-    "type": "library",
-    "description": "Template Project Name",
-    "keywords": [],
-    "homepage": "https://github.com/gsteel/php-template-project",
+    "name": "gsteel/google-timezone",
+    "description": "Google Timezone API Client",
     "license": "MIT",
+    "type": "library",
+    "keywords": [],
     "authors": [
         {
             "name": "George Steel",
             "email": "george@net-glue.co.uk"
         }
     ],
+    "homepage": "https://github.com/gsteel/google-timezone",
     "require": {
-        "php": "^7.3 || ~8.0"
+        "php": "^7.3 || ~8.0 || ~8.1",
+        "ext-json": "*",
+        "fig/http-message-util": "^1.1",
+        "psr/http-client": "^1.0",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory": "^1.0"
     },
     "require-dev": {
+        "ext-curl": "*",
         "doctrine/coding-standard": "^9.0",
-        "ergebnis/composer-normalize": "^2.15",
+        "ergebnis/composer-normalize": "^2.20.0",
         "infection/infection": "^0.18.2",
-        "phpunit/phpunit": "^9.5",
-        "psalm/plugin-phpunit": "^0.16.1",
+        "laminas/laminas-diactoros": "^2.14",
+        "php-http/curl-client": "^2.2",
+        "phpunit/phpunit": "^9.5.21",
+        "psalm/plugin-phpunit": "^0.17.0",
+        "react/child-process": "^0.6.4",
+        "react/http": "^1.6",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^4.8"
+        "vimeo/psalm": "^4.26.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GSteel\\GoogleTimezone\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GSteel\\GoogleTimezone\\Test\\Unit\\": "test/Unit",
+            "GSteel\\GoogleTimezone\\Test\\Integration\\": "test/Integration"
+        }
     },
     "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true
+        },
+        "platform": {
+            "php": "7.3.99"
+        },
         "sort-packages": true
     },
     "extra": {
         "composer-normalize": {
             "indent-size": 4,
             "indent-style": "space"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Gsteel\\Package\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Gsteel\\Package\\Test\\Unit\\": "test/Unit",
-            "Gsteel\\Package\\Test\\Integration\\": "test/Integration"
         }
     },
     "scripts": {
