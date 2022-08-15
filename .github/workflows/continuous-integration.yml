@@ -1,33 +1,123 @@
 name: "Continuous Integration"
-
 on:
-  pull_request:
   push:
-    branches:
-      - main
+  pull_request:
+
+env:
+  php_extensions: curl,json,sockets
+  default_php: 7.3
 
 jobs:
-  matrix:
-    name: Generate job matrix
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.matrix.outputs.matrix }}
-    steps:
-      - name: Gather CI configuration
-        id: matrix
-        uses: laminas/laminas-ci-matrix-action@v1
 
-  qa:
-    name: QA Checks
-    needs: [matrix]
-    runs-on: ${{ matrix.operatingSystem }}
+  cs-check:
+    name: CS Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.default_php }}
+          extensions: ${{ env.php_extensions }}
+          tools: cs2pr
+      - uses: ramsey/composer-install@2.1.0
+      - run: vendor/bin/phpcs --report=checkstyle -q | cs2pr
+
+  psalm:
+    name: Psalm Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.default_php }}
+          extensions: ${{ env.php_extensions }}
+          tools: cs2pr
+      - uses: ramsey/composer-install@2.1.0
+      - run: vendor/bin/psalm --stats --shepherd --output-format=github
+
+  infection:
+    name: "Mutation Tests"
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.default_php }}
+          extensions: ${{ env.php_extensions }}
+          coverage: pcov
+          ini-values: pcov.enabled=1
+      - uses: ramsey/composer-install@2.1.0
+      - run: vendor/bin/infection --configuration=infection.json
+
+  run-tests:
+
+    name: PHPUnit on ${{ matrix.php-version }}
+    runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
-      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
+      matrix:
+        php-version: ['7.3', '7.4', '8.0', '8.1', '8.2']
+        dependencies:
+          - "lowest"
+          - "highest"
+          - "locked"
+        include:
+          - php-version: '8.2'
+            composer-options: "--ignore-platform-reqs"
+
     steps:
-      - name: ${{ matrix.name }}
-        uses: laminas/laminas-continuous-integration-action@v1
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
         with:
-          job: ${{ matrix.job }}
+          php-version: ${{ matrix.php-version }}
+          extensions: ${{ env.php_extensions }}
+          coverage: pcov
+          ini-values: pcov.enabled=1
+      - uses: ramsey/composer-install@2.1.0
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "${{ matrix.composer-options }}"
+      - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
+      - uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
+  test-with-api-key:
+    name: Integration Tests using API Key
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: ${{ env.php_extensions }}
+          coverage: pcov
+          ini-values: pcov.enabled=1
+      - uses: ramsey/composer-install@2.1.0
+        with:
+          composer-options: "${{ matrix.composer-options }}"
+      - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+      - uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
+  composer-require-checker:
+    name: "Check for missing dependencies"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          ini-values: memory_limit=-1
+          extensions: ${{ env.php_extensions }}
+      - uses: ramsey/composer-install@2.1.0
+      - run: composer global config bin-dir /usr/local/bin
+      - run: composer global require -W maglnet/composer-require-checker
+      - run: /usr/local/bin/composer-require-checker check

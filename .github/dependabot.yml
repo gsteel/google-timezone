@@ -5,11 +5,11 @@ updates:
       - "dependency"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
 
   - package-ecosystem: "github-actions"
     labels:
       - "dependency"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
