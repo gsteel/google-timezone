@@ -46,7 +46,7 @@ final class Coordinates implements JsonSerializable
         return new self(
             self::validateLatitude($lat),
             self::validateLongitude($lng),
-            $precision
+            $precision,
         );
     }
 
@@ -61,7 +61,7 @@ final class Coordinates implements JsonSerializable
     {
         if (! preg_match('/^([-+]?\d*\.\d+),([-+]?\d*\.\d+)$/', $latLng, $match)) {
             throw new InvalidArgument(
-                'Coordinate strings must have fractional digits and a decimal point such as "1.23,1.23"'
+                'Coordinate strings must have fractional digits and a decimal point such as "1.23,1.23"',
             );
         }
 
@@ -75,7 +75,7 @@ final class Coordinates implements JsonSerializable
     {
         return new self(
             random_int(-900000, 900000) / 10000.0,
-            random_int(-1800000, 1800000) / 10000.0
+            random_int(-1800000, 1800000) / 10000.0,
         );
     }
 

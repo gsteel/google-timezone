@@ -12,7 +12,7 @@ final class InvalidCoordinate extends InvalidArgument
     {
         return new self(sprintf(
             'Latitude must be a number between -90 and 90. Received %f',
-            $lat
+            $lat,
         ));
     }
 
@@ -20,7 +20,7 @@ final class InvalidCoordinate extends InvalidArgument
     {
         return new self(sprintf(
             'Longitude must be a number between -180 and 180. Received %f',
-            $lng
+            $lng,
         ));
     }
 }

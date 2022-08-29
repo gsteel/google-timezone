@@ -135,7 +135,7 @@ final class MockServer
                     'key' => self::INVALID_KEY,
                 ],
                 'method' => Method::METHOD_GET,
-                'body' => <<<JSON
+                'body' => <<<'JSON'
                     {
                        "errorMessage" : "The provided API key is invalid.",
                        "status" : "REQUEST_DENIED"

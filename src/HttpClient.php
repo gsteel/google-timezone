@@ -34,7 +34,7 @@ final class HttpClient implements Client
         private ClientInterface $httpClient,
         private UriFactoryInterface $uriFactory,
         private RequestFactoryInterface $requestFactory,
-        private string $baseUri = self::BASE_URI
+        private string $baseUri = self::BASE_URI,
     ) {
     }
 
@@ -43,8 +43,11 @@ final class HttpClient implements Client
      *
      * @throws RequestFailed If the request cannot be sent or the response cannot be understood.
      */
-    public function fetch(Coordinates $coordinates, DateTimeInterface $referenceDate, ?string $language = null): Result
-    {
+    public function fetch(
+        Coordinates $coordinates,
+        DateTimeInterface $referenceDate,
+        string|null $language = null,
+    ): Result {
         $parameters = array_filter([
             'key' => $this->apiKey,
             'location' => $coordinates->toString(),
@@ -57,7 +60,7 @@ final class HttpClient implements Client
 
         $request = $this->requestFactory->createRequest(
             RequestMethodInterface::METHOD_GET,
-            $uri
+            $uri,
         );
 
         /**

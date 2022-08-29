@@ -10,13 +10,12 @@ use Psr\Http\Message\ResponseInterface;
 
 final class TestHttpClient implements ClientInterface
 {
-    private ClientInterface $client;
-    private ?RequestInterface $lastRequest   = null;
-    private ?ResponseInterface $lastResponse = null;
+    private RequestInterface|null $lastRequest   = null;
+    private ResponseInterface|null $lastResponse = null;
 
-    public function __construct(ClientInterface $client)
-    {
-        $this->client = $client;
+    public function __construct(
+        private ClientInterface $client,
+    ) {
     }
 
     public function sendRequest(RequestInterface $request): ResponseInterface
@@ -32,12 +31,12 @@ final class TestHttpClient implements ClientInterface
         $this->lastRequest = $this->lastResponse = null;
     }
 
-    public function lastRequest(): ?RequestInterface
+    public function lastRequest(): RequestInterface|null
     {
         return $this->lastRequest;
     }
 
-    public function lastResponse(): ?ResponseInterface
+    public function lastResponse(): ResponseInterface|null
     {
         return $this->lastResponse;
     }
