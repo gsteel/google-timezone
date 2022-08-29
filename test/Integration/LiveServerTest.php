@@ -32,7 +32,7 @@ final class LiveServerTest extends TestCase
             $apiKey,
             new Client(),
             new UriFactory(),
-            new RequestFactory()
+            new RequestFactory(),
         );
     }
 
@@ -44,7 +44,7 @@ final class LiveServerTest extends TestCase
 
         $result = $this->client->fetch(
             Coordinates::fromString($primeMeridian),
-            $referenceDate
+            $referenceDate,
         );
 
         self::assertTrue($result->isSuccess());
@@ -61,7 +61,7 @@ final class LiveServerTest extends TestCase
 
         $result = $this->client->fetch(
             Coordinates::fromString($primeMeridian),
-            $referenceDate
+            $referenceDate,
         );
 
         self::assertTrue($result->isSuccess());

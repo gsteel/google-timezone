@@ -23,7 +23,7 @@ class HttpClientTest extends RemoteIntegrationTestCase
             self::httpClient(),
             new UriFactory(),
             self::requestFactory(),
-            self::apiServerUri()
+            self::apiServerUri(),
         );
     }
 
@@ -34,12 +34,12 @@ class HttpClientTest extends RemoteIntegrationTestCase
             self::httpClient(),
             new UriFactory(),
             self::requestFactory(),
-            self::apiServerUri()
+            self::apiServerUri(),
         );
 
         $result = $client->fetch(
             Coordinates::fromDecimal(0.0, 0.0, 1),
-            MockServer::staticReferenceDate()
+            MockServer::staticReferenceDate(),
         );
 
         self::assertFalse($result->isSuccess());
@@ -55,18 +55,18 @@ class HttpClientTest extends RemoteIntegrationTestCase
             self::httpClient(),
             new UriFactory(),
             self::requestFactory(),
-            self::apiServerUri()
+            self::apiServerUri(),
         );
 
         $result = $client->fetch(
             Coordinates::fromDecimal(0.0, 0.0, 1),
-            MockServer::staticReferenceDate()
+            MockServer::staticReferenceDate(),
         );
 
         self::assertFalse($result->isSuccess());
         self::assertStringContainsString(
             'You must use an API key to authenticate each request to Google Maps Platform APIs',
-            (string) $result->errorMessage()
+            (string) $result->errorMessage(),
         );
         self::assertEquals('REQUEST_DENIED', $result->status());
     }
@@ -77,7 +77,7 @@ class HttpClientTest extends RemoteIntegrationTestCase
 
         $result = $this->client->fetch(
             $coordinates,
-            MockServer::staticReferenceDate()
+            MockServer::staticReferenceDate(),
         );
 
         self::assertTrue($result->isSuccess());
@@ -95,7 +95,7 @@ class HttpClientTest extends RemoteIntegrationTestCase
         $result = $this->client->fetch(
             $coordinates,
             MockServer::staticReferenceDate(),
-            'es'
+            'es',
         );
 
         self::assertTrue($result->isSuccess());

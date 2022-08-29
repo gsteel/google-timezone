@@ -21,6 +21,6 @@ interface Client
     public function fetch(
         Coordinates $coordinates,
         DateTimeInterface $referenceDate,
-        ?string $language = null
+        string|null $language = null,
     ): Result;
 }

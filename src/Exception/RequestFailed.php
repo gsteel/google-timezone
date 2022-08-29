@@ -11,15 +11,15 @@ use Throwable;
 
 final class RequestFailed extends RuntimeException implements Exception
 {
-    private ?RequestInterface $request   = null;
-    private ?ResponseInterface $response = null;
+    private RequestInterface|null $request   = null;
+    private ResponseInterface|null $response = null;
 
     public static function withNetworkFailure(RequestInterface $request, Throwable $error): self
     {
         $exception = new self(
             'The request to Google’s timezone API failed due to a communication error',
             500,
-            $error
+            $error,
         );
 
         $exception->request = $request;
@@ -30,12 +30,12 @@ final class RequestFailed extends RuntimeException implements Exception
     public static function withInvalidResponseBody(
         RequestInterface $request,
         ResponseInterface $response,
-        Throwable $error
+        Throwable $error,
     ): self {
         $exception = new self(
             'The response received could not be decoded as a json payload',
             500,
-            $error
+            $error,
         );
 
         $exception->request  = $request;
@@ -44,12 +44,12 @@ final class RequestFailed extends RuntimeException implements Exception
         return $exception;
     }
 
-    public function request(): ?RequestInterface
+    public function request(): RequestInterface|null
     {
         return $this->request;
     }
 
-    public function response(): ?ResponseInterface
+    public function response(): ResponseInterface|null
     {
         return $this->response;
     }

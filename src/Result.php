@@ -37,14 +37,14 @@ final class Result
      */
     private function __construct(
         private string $status,
-        private ?int $dstOffset,
-        private ?string $errorMessage,
-        private ?int $utcOffset,
-        private ?string $timezone,
-        private ?string $name,
+        private int|null $dstOffset,
+        private string|null $errorMessage,
+        private int|null $utcOffset,
+        private string|null $timezone,
+        private string|null $name,
         private Coordinates $coordinates,
-        private ?string $language,
-        private DateTimeInterface $referenceDate
+        private string|null $language,
+        private DateTimeInterface $referenceDate,
     ) {
     }
 
@@ -57,21 +57,21 @@ final class Result
     public static function with(
         array $data,
         Coordinates $coordinates,
-        ?string $language,
-        DateTimeInterface $referenceDate
+        string|null $language,
+        DateTimeInterface $referenceDate,
     ): self {
         $status = $data['status'] ?? null;
         if (! is_string($status)) {
             throw new AssertionFailed(sprintf(
                 '"%s" is not a valid status code',
-                gettype($status)
+                gettype($status),
             ));
         }
 
         if (! in_array($status, self::STATUS_VALUES, true)) {
             throw new AssertionFailed(sprintf(
                 '"%s" is not a valid status code',
-                $status
+                $status,
             ));
         }
 
@@ -104,7 +104,7 @@ final class Result
             $name,
             $coordinates,
             $language,
-            $referenceDate
+            $referenceDate,
         );
     }
 
@@ -122,7 +122,7 @@ final class Result
         return new DateTimeZone($this->timezone);
     }
 
-    public function name(): ?string
+    public function name(): string|null
     {
         if (! $this->name) {
             throw new BadMethodCall('The timezone name is not available for an unsuccessful request');
@@ -145,7 +145,7 @@ final class Result
         return $this->status;
     }
 
-    public function errorMessage(): ?string
+    public function errorMessage(): string|null
     {
         return $this->errorMessage;
     }

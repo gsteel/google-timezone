@@ -51,11 +51,11 @@ class ResultTest extends TestCase
     public function testThatOnlyAnOkStatusIsConsideredSuccessful(): void
     {
         self::assertTrue(
-            Result::with(['status' => 'OK'], Coordinates::random(), null, $this->date)->isSuccess()
+            Result::with(['status' => 'OK'], Coordinates::random(), null, $this->date)->isSuccess(),
         );
 
         self::assertFalse(
-            Result::with(['status' => 'INVALID_REQUEST'], Coordinates::random(), null, $this->date)->isSuccess()
+            Result::with(['status' => 'INVALID_REQUEST'], Coordinates::random(), null, $this->date)->isSuccess(),
         );
     }
 

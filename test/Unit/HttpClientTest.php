@@ -37,7 +37,7 @@ class HttpClientTest extends TestCase
             'some_key',
             $this->http,
             new UriFactory(),
-            new RequestFactory()
+            new RequestFactory(),
         );
 
         $date = DateTimeImmutable::createFromFormat('!Y-m-d', '2020-01-01');
@@ -157,9 +157,7 @@ class HttpClientTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider invalidStatusValues
-     */
+    /** @dataProvider invalidStatusValues */
     public function testAnExceptionIsThrownForAnInvalidStatus(mixed $status): void
     {
         $this->http->expects(self::once())
