@@ -32,6 +32,7 @@ class HttpClientTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->http   = $this->createMock(ClientInterface::class);
         $this->client = new HttpClient(
             'some_key',

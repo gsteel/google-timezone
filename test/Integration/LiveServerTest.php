@@ -23,6 +23,7 @@ final class LiveServerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $apiKey = getenv('API_KEY');
         if (! is_string($apiKey) || $apiKey === '') {
             self::markTestSkipped('No API Key is available in the API_KEY environment variable');
