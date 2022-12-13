@@ -20,6 +20,7 @@ class ResultTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $date = DateTimeImmutable::createFromFormat('!Y-m-d', '2020-01-01');
         assert($date instanceof DateTimeImmutable);
         $this->date = $date;

@@ -27,6 +27,7 @@ abstract class RemoteIntegrationTestCase extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         self::httpClient()->clearState();
     }
 
