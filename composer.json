@@ -24,7 +24,7 @@
         "doctrine/coding-standard": "^11.0.0",
         "ergebnis/composer-normalize": "^2.29.0",
         "infection/infection": "^0.26.16",
-        "laminas/laminas-diactoros": "^2.22.0",
+        "laminas/laminas-diactoros": "^2.23.0",
         "php-http/curl-client": "^2.2.1",
         "php-http/discovery": "^1.14.3",
         "phpunit/phpunit": "^9.5.27",
