@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;
 use React\ChildProcess\Process;
 
-use function assert;
 use function sprintf;
 use function usleep;
 
@@ -57,10 +56,7 @@ abstract class RemoteIntegrationTestCase extends TestCase
     /** @return non-empty-string */
     protected static function apiServerUri(): string
     {
-        $value = sprintf('http://127.0.0.1:%d/maps/api/timezone/json', self::$serverPort);
-        assert($value !== '');
-
-        return $value;
+        return sprintf('http://127.0.0.1:%d/maps/api/timezone/json', self::$serverPort);
     }
 
     protected static function httpClient(): TestHttpClient
