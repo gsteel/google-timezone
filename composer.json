@@ -73,6 +73,7 @@
             "composer normalize",
             "psalm --generate-baseline",
             "phpcbf"
-        ]
+        ],
+        "static-analysis": "psalm --shepherd --stats"
     }
 }
