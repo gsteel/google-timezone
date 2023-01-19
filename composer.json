@@ -23,7 +23,7 @@
         "ext-curl": "*",
         "doctrine/coding-standard": "^11.1.0",
         "ergebnis/composer-normalize": "^2.29.0",
-        "infection/infection": "^0.26.16",
+        "infection/infection": "^0.26.17",
         "laminas/laminas-diactoros": "^2.24.0",
         "php-http/curl-client": "^2.2.1",
         "php-http/discovery": "^1.14.3",
