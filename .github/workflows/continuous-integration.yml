@@ -97,6 +97,7 @@ jobs:
           composer-options: "${{ matrix.composer-options }}"
       - run: composer remove --dev infection/infection
       - run: composer update
+      - run: php ./vendor/bin/phpunit --migrate-configuration
       - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
         env:
           API_KEY: ${{ secrets.API_KEY }}
