@@ -5,19 +5,19 @@
          cacheResultFile=".cache/test-results"
          failOnWarning="true"
          verbose="true">
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>test/Unit</directory>
-        </testsuite>
-        <testsuite name="Integration">
-            <directory>test/Integration</directory>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory>test/Unit</directory>
+    </testsuite>
+    <testsuite name="Integration">
+      <directory>test/Integration</directory>
+    </testsuite>
+  </testsuites>
 
-    <coverage cacheDirectory=".cache/code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
+  <coverage cacheDirectory=".cache/code-coverage"
+            processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </coverage>
 </phpunit>

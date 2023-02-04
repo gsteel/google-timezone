@@ -27,7 +27,7 @@ class ResultTest extends TestCase
     }
 
     /** @return array<string, array{0: array<string, mixed>}> */
-    public function invalidPayloadProvider(): array
+    public static function invalidPayloadProvider(): array
     {
         return [
             'Missing' => [[]],

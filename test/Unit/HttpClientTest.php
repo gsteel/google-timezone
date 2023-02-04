@@ -150,7 +150,7 @@ class HttpClientTest extends TestCase
     }
 
     /** @return array<string, array{0: mixed}> */
-    public function invalidStatusValues(): array
+    public static function invalidStatusValues(): array
     {
         return [
             'Not String' => [1],

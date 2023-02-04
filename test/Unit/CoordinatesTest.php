@@ -70,7 +70,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return list<string[]> */
-    public function invalidJsonProvider(): array
+    public static function invalidJsonProvider(): array
     {
         return [
             [json_encode(['too' => ['deep' => 1]])],
@@ -88,7 +88,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return list<string[]> */
-    public function invalidJsonFormatProvider(): array
+    public static function invalidJsonFormatProvider(): array
     {
         return [
             [json_encode(['foo'])],
@@ -114,7 +114,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return array<array-key, array{0: string, 1: float, 2: float}> */
-    public function strings(): array
+    public static function strings(): array
     {
         return [
             ['1.23,3.21', 1.23, 3.21],
@@ -140,7 +140,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return list<string[]> */
-    public function invalidStringProvider(): array
+    public static function invalidStringProvider(): array
     {
         return [
             ['1.23,foo'],
@@ -172,7 +172,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return list<int[]> */
-    public function outOfBoundsProvider(): array
+    public static function outOfBoundsProvider(): array
     {
         return [
             [-91, 0],
@@ -190,7 +190,7 @@ class CoordinatesTest extends TestCase
     }
 
     /** @return list<int[]> */
-    public function insideBoundsProvider(): array
+    public static function insideBoundsProvider(): array
     {
         return [
             [-90, 0],
