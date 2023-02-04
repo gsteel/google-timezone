@@ -67,7 +67,6 @@ class ResultTest extends TestCase
         $this->expectException(BadMethodCall::class);
         $this->expectExceptionMessage('The timezone is not available for an unsuccessful request');
 
-        /** @psalm-suppress UnusedMethodCall */
         $result->timezone();
     }
 
@@ -78,7 +77,6 @@ class ResultTest extends TestCase
         $this->expectException(BadMethodCall::class);
         $this->expectExceptionMessage('The timezone name is not available for an unsuccessful request');
 
-        /** @psalm-suppress UnusedMethodCall */
         $result->name();
     }
 
@@ -89,7 +87,6 @@ class ResultTest extends TestCase
         $this->expectException(BadMethodCall::class);
         $this->expectExceptionMessage('The DST offset is not available for an unsuccessful request');
 
-        /** @psalm-suppress UnusedMethodCall */
         $result->isReferenceDateDst();
     }
 
