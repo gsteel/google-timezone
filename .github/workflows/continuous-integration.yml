@@ -81,6 +81,30 @@ jobs:
           file: ./coverage.xml
           fail_ci_if_error: false
 
+  test-with-phpunit-10:
+    name: Run tests on PHPUnit 10, PHP 8.1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@2.24.0
+        with:
+          php-version: 8.1
+          extensions: ${{ env.php_extensions }}
+          coverage: pcov
+          ini-values: pcov.enabled=1
+      - uses: ramsey/composer-install@2.2.0
+        with:
+          composer-options: "${{ matrix.composer-options }}"
+      - run: composer remove --dev infection/infection
+      - run: composer update
+      - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+      - uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
   test-with-api-key:
     name: Integration Tests using API Key
     runs-on: ubuntu-latest

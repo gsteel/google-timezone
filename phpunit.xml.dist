@@ -2,22 +2,26 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         cacheResultFile=".cache/test-results"
+         cacheDirectory=".cache/phpunit"
          failOnWarning="true"
-         verbose="true">
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>test/Unit</directory>
-        </testsuite>
-        <testsuite name="Integration">
-            <directory>test/Integration</directory>
-        </testsuite>
-    </testsuites>
-
-    <coverage cacheDirectory=".cache/code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnIncompleteTests="true"
+         displayDetailsOnSkippedTests="true"
+>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory>test/Unit</directory>
+    </testsuite>
+    <testsuite name="Integration">
+      <directory>test/Integration</directory>
+    </testsuite>
+  </testsuites>
+  <coverage>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </coverage>
 </phpunit>
