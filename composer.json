@@ -32,7 +32,7 @@
         "react/child-process": "^0.6.5",
         "react/http": "^1.8.0",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^5.7.3"
+        "vimeo/psalm": "^5.7.4"
     },
     "autoload": {
         "psr-4": {
