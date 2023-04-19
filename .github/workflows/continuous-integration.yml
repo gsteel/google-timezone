@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.php_extensions }}
@@ -86,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: 8.1
           extensions: ${{ env.php_extensions }}
@@ -109,7 +109,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@2.25.0
+      - uses: shivammathur/setup-php@2.25.1
         with:
           php-version: '8.1'
           ini-values: memory_limit=-1
