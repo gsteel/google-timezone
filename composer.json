@@ -25,7 +25,7 @@
         "ergebnis/composer-normalize": "^2.30.2",
         "infection/infection": "^0.26.21",
         "laminas/laminas-diactoros": "^2.25.2",
-        "php-http/curl-client": "^2.2.1",
+        "php-http/curl-client": "^2.3.0",
         "php-http/discovery": "^1.17.0",
         "phpunit/phpunit": "^10.1.2",
         "psalm/plugin-phpunit": "^0.18.4",
