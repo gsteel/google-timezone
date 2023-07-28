@@ -22,7 +22,7 @@
     "require-dev": {
         "ext-curl": "*",
         "doctrine/coding-standard": "^12.0.0",
-        "ergebnis/composer-normalize": "^2.33.0",
+        "ergebnis/composer-normalize": "^2.34.0",
         "infection/infection": "^0.27.0",
         "laminas/laminas-diactoros": "^3.0.0",
         "php-http/curl-client": "^2.3.0",
