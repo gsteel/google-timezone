@@ -36,15 +36,15 @@ final class Result
      * @psalm-param value-of<self::STATUS_VALUES> $status
      */
     private function __construct(
-        private string $status,
-        private int|null $dstOffset,
-        private string|null $errorMessage,
-        private int|null $utcOffset,
-        private string|null $timezone,
-        private string|null $name,
-        private Coordinates $coordinates,
-        private string|null $language,
-        private DateTimeInterface $referenceDate,
+        private readonly string $status,
+        private readonly int|null $dstOffset,
+        private readonly string|null $errorMessage,
+        private readonly int|null $utcOffset,
+        private readonly string|null $timezone,
+        private readonly string|null $name,
+        private readonly Coordinates $coordinates,
+        private readonly string|null $language,
+        private readonly DateTimeInterface $referenceDate,
     ) {
     }
 
@@ -115,7 +115,7 @@ final class Result
 
     public function timezone(): DateTimeZone
     {
-        if (! $this->timezone) {
+        if ($this->timezone === null) {
             throw new BadMethodCall('The timezone is not available for an unsuccessful request');
         }
 
@@ -124,7 +124,7 @@ final class Result
 
     public function name(): string|null
     {
-        if (! $this->name) {
+        if ($this->name === null) {
             throw new BadMethodCall('The timezone name is not available for an unsuccessful request');
         }
 
