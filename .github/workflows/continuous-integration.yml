@@ -76,10 +76,12 @@ jobs:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "${{ matrix.composer-options }}"
       - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-with-api-key:
     name: Integration Tests using API Key
@@ -98,10 +100,12 @@ jobs:
       - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
         env:
           API_KEY: ${{ secrets.API_KEY }}
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   composer-require-checker:
     name: "Check for missing dependencies"
