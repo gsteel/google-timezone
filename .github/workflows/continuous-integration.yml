@@ -80,6 +80,8 @@ jobs:
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   test-with-api-key:
     name: Integration Tests using API Key
@@ -102,6 +104,8 @@ jobs:
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   composer-require-checker:
     name: "Check for missing dependencies"
