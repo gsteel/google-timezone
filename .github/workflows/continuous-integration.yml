@@ -19,7 +19,7 @@ jobs:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
           tools: cs2pr
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
       - run: vendor/bin/phpcs --report=checkstyle -q | cs2pr
 
   psalm:
@@ -32,7 +32,7 @@ jobs:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
           tools: cs2pr
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
       - run: vendor/bin/psalm --stats --shepherd --output-format=github
 
   infection:
@@ -46,7 +46,7 @@ jobs:
           extensions: ${{ env.php_extensions }}
           coverage: pcov
           ini-values: pcov.enabled=1
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
       - run: vendor/bin/infection --configuration=infection.json
 
   run-tests:
@@ -71,7 +71,7 @@ jobs:
           extensions: ${{ env.php_extensions }}
           coverage: pcov
           ini-values: pcov.enabled=1
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "${{ matrix.composer-options }}"
@@ -94,7 +94,7 @@ jobs:
           extensions: ${{ env.php_extensions }}
           coverage: pcov
           ini-values: pcov.enabled=1
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
         with:
           composer-options: "${{ matrix.composer-options }}"
       - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
@@ -118,7 +118,7 @@ jobs:
           php-version: '8.1'
           ini-values: memory_limit=-1
           extensions: ${{ env.php_extensions }}
-      - uses: ramsey/composer-install@2.2.0
+      - uses: ramsey/composer-install@2.3.0
       - run: composer global config bin-dir /usr/local/bin
       - run: composer global require -W maglnet/composer-require-checker
       - run: /usr/local/bin/composer-require-checker check
