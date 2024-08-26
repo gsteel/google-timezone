@@ -13,7 +13,7 @@ jobs:
     name: CS Checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4.1.6
       - uses: shivammathur/setup-php@2.30.5
         with:
           php-version: ${{ env.default_php }}
