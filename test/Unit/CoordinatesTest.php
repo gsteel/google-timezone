@@ -13,6 +13,8 @@ use function json_decode;
 use function json_encode;
 use function PHPUnit\Framework\assertEquals;
 
+use const JSON_THROW_ON_ERROR;
+
 class CoordinatesTest extends TestCase
 {
     public function testLatitudeAndLongitudeAreTheCorrectWayAroundWhenConstructedFromAString(): void
@@ -52,9 +54,9 @@ class CoordinatesTest extends TestCase
     public function testJsonSerialise(): void
     {
         $coords = Coordinates::fromDecimal(0.1, 0.2);
-        $json   = json_encode($coords);
+        $json   = json_encode($coords, JSON_THROW_ON_ERROR);
         self::assertJson($json);
-        $value = json_decode($json, true);
+        $value = json_decode($json, true, JSON_THROW_ON_ERROR);
         self::assertIsArray($value);
         self::assertArrayHasKey('lat', $value);
         self::assertArrayHasKey('lng', $value);
@@ -65,7 +67,7 @@ class CoordinatesTest extends TestCase
     public function testJsonSerialisationRoundTrip(): void
     {
         $coords = Coordinates::fromDecimal(0.1, 0.2);
-        $copy   = Coordinates::fromJsonString(json_encode($coords));
+        $copy   = Coordinates::fromJsonString(json_encode($coords, JSON_THROW_ON_ERROR));
         self::assertTrue($coords->isEqualTo($copy));
     }
 
@@ -73,7 +75,7 @@ class CoordinatesTest extends TestCase
     public static function invalidJsonProvider(): array
     {
         return [
-            [json_encode(['too' => ['deep' => 1]])],
+            [json_encode(['too' => ['deep' => 1]], JSON_THROW_ON_ERROR)],
             ['invalid'],
         ];
     }
@@ -91,10 +93,10 @@ class CoordinatesTest extends TestCase
     public static function invalidJsonFormatProvider(): array
     {
         return [
-            [json_encode(['foo'])],
-            [json_encode(['lat' => 1, 'lng' => 'hey'])],
-            [json_encode(['lat' => 1.23, 'lng' => 'hey'])],
-            [json_encode(['lat' => 1, 'lng' => 1])],
+            [json_encode(['foo'], JSON_THROW_ON_ERROR)],
+            [json_encode(['lat' => 1, 'lng' => 'hey'], JSON_THROW_ON_ERROR)],
+            [json_encode(['lat' => 1.23, 'lng' => 'hey'], JSON_THROW_ON_ERROR)],
+            [json_encode(['lat' => 1, 'lng' => 1], JSON_THROW_ON_ERROR)],
         ];
     }
 

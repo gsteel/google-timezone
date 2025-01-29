@@ -9,7 +9,9 @@ use GSteel\GoogleTimezone\HttpClient;
 use GSteel\GoogleTimezone\Test\Integration\Framework\MockServer;
 use GSteel\GoogleTimezone\Test\Integration\Framework\RemoteIntegrationTestCase;
 use Laminas\Diactoros\UriFactory;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
+#[RunTestsInSeparateProcesses]
 class HttpClientTest extends RemoteIntegrationTestCase
 {
     private HttpClient $client;

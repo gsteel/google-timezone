@@ -22,6 +22,8 @@ use function ksort;
 use function parse_str;
 use function sprintf;
 
+use const JSON_THROW_ON_ERROR;
+
 final class MockServer
 {
     public const STATIC_REFERENCE_DATE = '2020-01-01';
@@ -116,7 +118,7 @@ final class MockServer
             'body' => json_encode([
                 'errorMessage' => sprintf('URI and Query did not match: %s', (string) $request->getUri()),
                 'status' => 'UNKNOWN_ERROR',
-            ]),
+            ], JSON_THROW_ON_ERROR),
             'type' => 'application/json',
             'code' => 404,
             'bodyMatcher' => null,
@@ -156,7 +158,7 @@ final class MockServer
                                       . 'APIs. For additional information, please refer to '
                                       . 'http://g.co/dev/maps-no-account',
                     'status' => 'REQUEST_DENIED',
-                ]),
+                ], JSON_THROW_ON_ERROR),
                 'type' => 'application/json',
                 'code' => 200,
                 'bodyMatcher' => null,
@@ -175,7 +177,7 @@ final class MockServer
                     'rawOffset' => -28800,
                     'timeZoneId' => 'America/Los_Angeles',
                     'timeZoneName' => 'Pacific Daylight Time',
-                ]),
+                ], JSON_THROW_ON_ERROR),
                 'type' => 'application/json',
                 'code' => 200,
                 'bodyMatcher' => null,
@@ -195,7 +197,7 @@ final class MockServer
                     'rawOffset' => -28800,
                     'timeZoneId' => 'America/Los_Angeles',
                     'timeZoneName' => 'hora de verano del Pacífico',
-                ]),
+                ], JSON_THROW_ON_ERROR),
                 'type' => 'application/json',
                 'code' => 200,
                 'bodyMatcher' => null,
