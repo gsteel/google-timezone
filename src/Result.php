@@ -15,8 +15,11 @@ use function is_int;
 use function is_string;
 use function sprintf;
 
-/** @psalm-immutable */
-final class Result
+/**
+ * @psalm-immutable
+ * @psalm-suppress UnusedProperty
+ */
+final readonly class Result
 {
     private const STATUS_VALUES = [
         'OK' => 'OK',
@@ -36,15 +39,15 @@ final class Result
      * @psalm-param value-of<self::STATUS_VALUES> $status
      */
     private function __construct(
-        private readonly string $status,
-        private readonly int|null $dstOffset,
-        private readonly string|null $errorMessage,
-        private readonly int|null $utcOffset,
-        private readonly string|null $timezone,
-        private readonly string|null $name,
-        private readonly Coordinates $coordinates,
-        private readonly string|null $language,
-        private readonly DateTimeInterface $referenceDate,
+        private string $status,
+        private int|null $dstOffset,
+        private string|null $errorMessage,
+        private int|null $utcOffset,
+        private string|null $timezone,
+        private string|null $name,
+        private Coordinates $coordinates,
+        private string|null $language,
+        private DateTimeInterface $referenceDate,
     ) {
     }
 
