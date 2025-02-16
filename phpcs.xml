@@ -16,4 +16,5 @@
 
     <!-- Inherit rules from Doctrine Coding Standard -->
     <rule ref="Doctrine" />
+    <rule ref="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
 </ruleset>

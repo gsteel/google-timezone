@@ -11,7 +11,7 @@ use Laminas\Diactoros\Response\TextResponse;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
-class RequestFailedTest extends TestCase
+final class RequestFailedTest extends TestCase
 {
     public function testNetworkFailureHasExpectedValues(): void
     {
