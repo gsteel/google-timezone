@@ -22,7 +22,7 @@ use Psr\Http\Message\RequestInterface;
 
 use function sprintf;
 
-class HttpClientTest extends TestCase
+final class HttpClientTest extends TestCase
 {
     /** @var ClientInterface&MockObject */
     private ClientInterface $http;

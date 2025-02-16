@@ -12,7 +12,7 @@ use Laminas\Diactoros\UriFactory;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 #[RunTestsInSeparateProcesses]
-class HttpClientTest extends RemoteIntegrationTestCase
+final class HttpClientTest extends RemoteIntegrationTestCase
 {
     private HttpClient $client;
 

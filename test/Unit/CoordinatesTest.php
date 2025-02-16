@@ -15,7 +15,7 @@ use function PHPUnit\Framework\assertEquals;
 
 use const JSON_THROW_ON_ERROR;
 
-class CoordinatesTest extends TestCase
+final class CoordinatesTest extends TestCase
 {
     public function testLatitudeAndLongitudeAreTheCorrectWayAroundWhenConstructedFromAString(): void
     {

@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 use function assert;
 
-class ResultTest extends TestCase
+final class ResultTest extends TestCase
 {
     private DateTimeImmutable $date;
 
