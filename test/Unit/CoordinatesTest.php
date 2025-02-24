@@ -7,6 +7,7 @@ namespace GSteel\GoogleTimezone\Test\Unit;
 use GSteel\GoogleTimezone\Coordinates;
 use GSteel\GoogleTimezone\Exception\InvalidArgument;
 use GSteel\GoogleTimezone\Exception\InvalidCoordinate;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 use function json_decode;
@@ -80,7 +81,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider invalidJsonProvider */
+    #[DataProvider('invalidJsonProvider')]
     public function testInvalidJsonPayload(string $json): void
     {
         $this->expectException(InvalidArgument::class);
@@ -100,7 +101,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider invalidJsonFormatProvider */
+    #[DataProvider('invalidJsonFormatProvider')]
     public function testInvalidJsonFormat(string $json): void
     {
         $this->expectException(InvalidArgument::class);
@@ -125,7 +126,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider strings */
+    #[DataProvider('strings')]
     public function testCoordinatesCanBeSerialisedToAndFromAString(string $input, float $lat, float $lng): void
     {
         $coords = Coordinates::fromString($input);
@@ -154,7 +155,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider invalidStringProvider */
+    #[DataProvider('invalidStringProvider')]
     public function testExceptionThrownForInvalidStringFormat(string $invalidString): void
     {
         $this->expectException(InvalidArgument::class);
@@ -184,7 +185,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider outOfBoundsProvider */
+    #[DataProvider('outOfBoundsProvider')]
     public function testCoordinateBounds(int $lat, int $lng): void
     {
         $this->expectException(InvalidArgument::class);
@@ -202,7 +203,7 @@ final class CoordinatesTest extends TestCase
         ];
     }
 
-    /** @dataProvider insideBoundsProvider */
+    #[DataProvider('insideBoundsProvider')]
     public function testCoordinateInclusiveBounds(int $lat, int $lng): void
     {
         Coordinates::fromDecimal((float) $lat, (float) $lng);

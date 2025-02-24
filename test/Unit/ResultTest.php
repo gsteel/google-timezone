@@ -10,6 +10,7 @@ use GSteel\GoogleTimezone\Exception\AssertionFailed;
 use GSteel\GoogleTimezone\Exception\BadMethodCall;
 use GSteel\GoogleTimezone\Result;
 use Override;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 use function assert;
@@ -38,11 +39,8 @@ final class ResultTest extends TestCase
         ];
     }
 
-    /**
-     * @param array<string, mixed> $body
-     *
-     * @dataProvider invalidPayloadProvider
-     */
+    /** @param array<string, mixed> $body */
+    #[DataProvider('invalidPayloadProvider')]
     public function testResultsMustContainAValidStatusCode(array $body): void
     {
         $this->expectException(AssertionFailed::class);
