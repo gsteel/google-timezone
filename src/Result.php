@@ -64,17 +64,10 @@ final readonly class Result
         DateTimeInterface $referenceDate,
     ): self {
         $status = $data['status'] ?? null;
-        if (! is_string($status)) {
+        if (! is_string($status) || ! in_array($status, self::STATUS_VALUES, true)) {
             throw new AssertionFailed(sprintf(
                 '"%s" is not a valid status code',
                 gettype($status),
-            ));
-        }
-
-        if (! in_array($status, self::STATUS_VALUES, true)) {
-            throw new AssertionFailed(sprintf(
-                '"%s" is not a valid status code',
-                $status,
             ));
         }
 

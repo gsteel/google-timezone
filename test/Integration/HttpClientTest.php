@@ -9,6 +9,7 @@ use GSteel\GoogleTimezone\HttpClient;
 use GSteel\GoogleTimezone\Test\Integration\Framework\MockServer;
 use GSteel\GoogleTimezone\Test\Integration\Framework\RemoteIntegrationTestCase;
 use Laminas\Diactoros\UriFactory;
+use Override;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 #[RunTestsInSeparateProcesses]
@@ -16,6 +17,7 @@ final class HttpClientTest extends RemoteIntegrationTestCase
 {
     private HttpClient $client;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -6,6 +6,7 @@ namespace GSteel\GoogleTimezone\Test\Integration\Framework;
 
 use Http\Client\Curl\Client;
 use Laminas\Diactoros\RequestFactory;
+use Override;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;
 use React\ChildProcess\Process;
@@ -23,6 +24,7 @@ abstract class RemoteIntegrationTestCase extends TestCase
     private static RequestFactory $requestFactory;
     protected static string $basePath = '/maps/api/timezone/json';
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -30,6 +32,7 @@ abstract class RemoteIntegrationTestCase extends TestCase
         self::httpClient()->clearState();
     }
 
+    #[Override]
     public static function setUpBeforeClass(): void
     {
         self::$httpClient     = new TestHttpClient(
@@ -44,6 +47,7 @@ abstract class RemoteIntegrationTestCase extends TestCase
         usleep(100000);
     }
 
+    #[Override]
     public static function tearDownAfterClass(): void
     {
         foreach (self::$serverProcess->pipes as $pipe) {

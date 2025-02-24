@@ -36,7 +36,7 @@ test: ## Run unit tests
 	vendor/bin/phpunit
 .PHONY: test
 
-qa: cs sa test ## Run all QA Checks
+qa: cs sa test mutants ## Run all QA Checks
 .PHONY: check
 
 get-rector: ## Install rector as a dev dependency
