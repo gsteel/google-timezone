@@ -10,6 +10,7 @@ use GSteel\GoogleTimezone\HttpClient;
 use Http\Client\Curl\Client;
 use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\UriFactory;
+use Override;
 use PHPUnit\Framework\TestCase;
 
 use function assert;
@@ -20,6 +21,7 @@ final class LiveServerTest extends TestCase
 {
     private HttpClient $client;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace GSteel\GoogleTimezone\Test\Integration\Framework;
 
+use Override;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -18,6 +19,7 @@ final class TestHttpClient implements ClientInterface
     ) {
     }
 
+    #[Override]
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
         $this->lastRequest  = $request;

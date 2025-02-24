@@ -9,6 +9,7 @@ use GSteel\GoogleTimezone\Coordinates;
 use GSteel\GoogleTimezone\Exception\AssertionFailed;
 use GSteel\GoogleTimezone\Exception\BadMethodCall;
 use GSteel\GoogleTimezone\Result;
+use Override;
 use PHPUnit\Framework\TestCase;
 
 use function assert;
@@ -17,6 +18,7 @@ final class ResultTest extends TestCase
 {
     private DateTimeImmutable $date;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();

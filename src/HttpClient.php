@@ -8,6 +8,7 @@ use DateTimeInterface;
 use Fig\Http\Message\RequestMethodInterface;
 use GSteel\GoogleTimezone\Exception\RequestFailed;
 use JsonException;
+use Override;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -43,6 +44,7 @@ final class HttpClient implements Client
      *
      * @throws RequestFailed If the request cannot be sent or the response cannot be understood.
      */
+    #[Override]
     public function fetch(
         Coordinates $coordinates,
         DateTimeInterface $referenceDate,

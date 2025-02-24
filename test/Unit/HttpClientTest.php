@@ -15,6 +15,7 @@ use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\Response\JsonResponse;
 use Laminas\Diactoros\Response\TextResponse;
 use Laminas\Diactoros\UriFactory;
+use Override;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -29,6 +30,7 @@ final class HttpClientTest extends TestCase
     private HttpClient $client;
     private DateTimeImmutable $date;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();

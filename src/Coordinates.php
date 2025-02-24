@@ -8,6 +8,7 @@ use GSteel\GoogleTimezone\Exception\InvalidArgument;
 use GSteel\GoogleTimezone\Exception\InvalidCoordinate;
 use JsonException;
 use JsonSerializable;
+use Override;
 
 use function assert;
 use function is_array;
@@ -74,8 +75,8 @@ final class Coordinates implements JsonSerializable
     public static function random(): self
     {
         return new self(
-            random_int(-900000, 900000) / 10000.0,
-            random_int(-1800000, 1800000) / 10000.0,
+            random_int(-900000, 900000) / 10000,
+            random_int(-1800000, 1800000) / 10000,
         );
     }
 
@@ -140,6 +141,7 @@ final class Coordinates implements JsonSerializable
     }
 
     /** @return array{lat: float, lng: float} */
+    #[Override]
     public function jsonSerialize(): array
     {
         return [
