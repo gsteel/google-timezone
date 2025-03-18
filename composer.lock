@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4e04deaa7b2ad04c8286aa16a17ce15",
+    "content-hash": "443347b200d1ac718a89706462c685f9",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -4524,16 +4524,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.12",
+            "version": "11.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d42785840519401ed2113292263795eb4c0f95da"
+                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d42785840519401ed2113292263795eb4c0f95da",
-                "reference": "d42785840519401ed2113292263795eb4c0f95da",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
+                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
                 "shasum": ""
             },
             "require": {
@@ -4560,7 +4560,7 @@
                 "sebastian/exporter": "^6.3.0",
                 "sebastian/global-state": "^7.0.2",
                 "sebastian/object-enumerator": "^6.0.1",
-                "sebastian/type": "^5.1.0",
+                "sebastian/type": "^5.1.2",
                 "sebastian/version": "^5.0.2",
                 "staabm/side-effects-detector": "^1.0.5"
             },
@@ -4605,7 +4605,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.13"
             },
             "funding": [
                 {
@@ -4621,7 +4621,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-07T07:31:03+00:00"
+            "time": "2025-03-18T13:41:57+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -7299,16 +7299,16 @@
         },
         {
             "name": "sebastian/type",
-            "version": "5.1.0",
+            "version": "5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "461b9c5da241511a2a0e8f240814fb23ce5c0aac"
+                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/461b9c5da241511a2a0e8f240814fb23ce5c0aac",
-                "reference": "461b9c5da241511a2a0e8f240814fb23ce5c0aac",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
+                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
                 "shasum": ""
             },
             "require": {
@@ -7344,7 +7344,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
                 "security": "https://github.com/sebastianbergmann/type/security/policy",
-                "source": "https://github.com/sebastianbergmann/type/tree/5.1.0"
+                "source": "https://github.com/sebastianbergmann/type/tree/5.1.2"
             },
             "funding": [
                 {
@@ -7352,7 +7352,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-17T13:12:04+00:00"
+            "time": "2025-03-18T13:35:50+00:00"
         },
         {
             "name": "sebastian/version",
