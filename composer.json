@@ -28,11 +28,11 @@
         "php-http/curl-client": "^2.3.3",
         "php-http/discovery": "^1.20.0",
         "phpunit/phpunit": "^11.5.14",
-        "psalm/plugin-phpunit": "^0.19.2",
+        "psalm/plugin-phpunit": "^0.19.3",
         "react/child-process": "^0.6.6",
         "react/http": "^1.11.0",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^6.9.1"
+        "vimeo/psalm": "^6.9.4"
     },
     "conflict": {
         "symfony/options-resolver": "<7.2",
