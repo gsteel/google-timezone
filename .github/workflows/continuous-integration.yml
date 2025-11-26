@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -68,7 +68,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
         with:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.php_extensions }}
@@ -91,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -116,7 +116,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6.0.0
-      - uses: shivammathur/setup-php@2.35.5
+      - uses: shivammathur/setup-php@2.36.0
 
         with:
           php-version: ${{ env.default_php }}
