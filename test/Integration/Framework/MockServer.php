@@ -26,9 +26,9 @@ use const JSON_THROW_ON_ERROR;
 
 final class MockServer
 {
-    public const STATIC_REFERENCE_DATE = '2020-01-01';
-    public const VALID_KEY             = 'valid_key';
-    public const INVALID_KEY           = 'invalid_key';
+    public const string STATIC_REFERENCE_DATE = '2020-01-01';
+    public const string VALID_KEY             = 'valid_key';
+    public const string INVALID_KEY           = 'invalid_key';
 
     private LoopInterface $loop;
     private HttpServer $server;

@@ -5,7 +5,7 @@ on:
 
 env:
   php_extensions: curl,json,sockets
-  default_php: 8.2
+  default_php: 8.3
 
 jobs:
 
@@ -13,8 +13,8 @@ jobs:
     name: CS Checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -26,8 +26,8 @@ jobs:
     name: Psalm Static Analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -39,8 +39,8 @@ jobs:
     name: "Mutation Tests"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: ['8.2', '8.3', '8.4', '8.5']
+        php-version: ['8.3', '8.4', '8.5']
         dependencies:
           - "lowest"
           - "highest"
@@ -67,8 +67,8 @@ jobs:
             composer-options: "--ignore-platform-reqs"
 
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
         with:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.php_extensions }}
@@ -90,8 +90,8 @@ jobs:
     name: Integration Tests using API Key
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
         with:
           php-version: ${{ env.default_php }}
           extensions: ${{ env.php_extensions }}
@@ -115,8 +115,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: shivammathur/setup-php@2.37.1
+      - uses: actions/checkout@v7.0.1
+      - uses: shivammathur/setup-php@2.37.2
 
         with:
           php-version: ${{ env.default_php }}

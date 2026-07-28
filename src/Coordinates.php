@@ -24,7 +24,7 @@ use const JSON_THROW_ON_ERROR;
 /** @psalm-immutable */
 final class Coordinates implements JsonSerializable
 {
-    public const DEFAULT_PRECISION = 7;
+    public const int DEFAULT_PRECISION = 7;
 
     private float $latitude;
     private float $longitude;
