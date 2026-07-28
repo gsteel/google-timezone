@@ -139,7 +139,7 @@ final class HttpClientTest extends TestCase
 
     public function testThatNetworkFailureWillCauseException(): void
     {
-        $exception = new NetworkException('Foo', $this->createMock(RequestInterface::class));
+        $exception = new NetworkException('Foo', self::createStub(RequestInterface::class));
 
         $this->http->expects(self::once())
             ->method('sendRequest')

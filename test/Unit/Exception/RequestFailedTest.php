@@ -15,7 +15,7 @@ final class RequestFailedTest extends TestCase
 {
     public function testNetworkFailureHasExpectedValues(): void
     {
-        $request  = $this->createMock(RequestInterface::class);
+        $request  = self::createStub(RequestInterface::class);
         $previous = new NetworkException('Bad News', $request);
         $error    = RequestFailed::withNetworkFailure($request, $previous);
 
@@ -27,7 +27,7 @@ final class RequestFailedTest extends TestCase
 
     public function testInvalidResponseHasExpectedValues(): void
     {
-        $request  = $this->createMock(RequestInterface::class);
+        $request  = self::createStub(RequestInterface::class);
         $response = new TextResponse('Foo');
         $previous = new Exception('Bad News');
         $error    = RequestFailed::withInvalidResponseBody($request, $response, $previous);
