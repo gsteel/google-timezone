@@ -28,7 +28,7 @@
         "php-http/curl-client": "^2.4.0",
         "php-http/discovery": "^1.20.0",
         "phpunit/phpunit": "^11.5.56",
-        "psalm/plugin-phpunit": "^0.19.7",
+        "psalm/plugin-phpunit": "^0.20.2",
         "react/child-process": "^0.6.7",
         "react/http": "^1.11.0",
         "roave/security-advisories": "dev-latest",
