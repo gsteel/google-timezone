@@ -5,7 +5,7 @@ on:
 
 env:
   php_extensions: curl,json,sockets
-  default_php: 8.2
+  default_php: 8.3
 
 jobs:
 
@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: ['8.2', '8.3', '8.4', '8.5']
+        php-version: ['8.3', '8.4', '8.5']
         dependencies:
           - "lowest"
           - "highest"
