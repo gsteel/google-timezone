@@ -7,11 +7,7 @@
          failOnNotice="true"
          failOnEmptyTestSuite="true"
          failOnPhpunitDeprecation="true"
-         displayDetailsOnTestsThatTriggerDeprecations="true"
-         displayDetailsOnTestsThatTriggerErrors="true"
-         displayDetailsOnTestsThatTriggerNotices="true"
-         displayDetailsOnTestsThatTriggerWarnings="true"
-         displayDetailsOnPhpunitDeprecations="true"
+         displayDetailsOnAllIssues="true"
          cacheDirectory=".cache/phpunit">
     <testsuites>
         <testsuite name="Unit">
