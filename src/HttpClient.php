@@ -24,7 +24,7 @@ use const JSON_THROW_ON_ERROR;
 
 final class HttpClient implements Client
 {
-    private const BASE_URI = 'https://maps.googleapis.com/maps/api/timezone/json';
+    private const string BASE_URI = 'https://maps.googleapis.com/maps/api/timezone/json';
 
     /**
      * @param non-empty-string $apiKey

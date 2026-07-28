@@ -21,7 +21,7 @@ use function sprintf;
  */
 final readonly class Result
 {
-    private const STATUS_VALUES = [
+    private const array STATUS_VALUES = [
         'OK' => 'OK',
         'INVALID_REQUEST' => 'INVALID_REQUEST',
         'OVER_DAILY_LIMIT' => 'OVER_DAILY_LIMIT',
