@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "844df03663700312708670b9cd94efc6",
+    "content-hash": "50915037f9b4dee664e251b32c281c12",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -1855,16 +1855,16 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.57.0",
+            "version": "2.58.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "fe0f69429cf61be9099155d5a63a2816016d5446"
+                "reference": "74ed2dad07f772e686a7f3498f2a507190640ee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/fe0f69429cf61be9099155d5a63a2816016d5446",
-                "reference": "fe0f69429cf61be9099155d5a63a2816016d5446",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/74ed2dad07f772e686a7f3498f2a507190640ee5",
+                "reference": "74ed2dad07f772e686a7f3498f2a507190640ee5",
                 "shasum": ""
             },
             "require": {
@@ -1881,15 +1881,15 @@
             "require-dev": {
                 "composer/composer": "^2.11.0",
                 "ergebnis/license": "^2.9.0",
-                "ergebnis/php-cs-fixer-config": "^6.64.1",
-                "ergebnis/phpstan-rules": "^2.17.0",
+                "ergebnis/php-cs-fixer-config": "^6.64.3",
+                "ergebnis/phpstan-rules": "^2.17.1",
                 "ergebnis/phpunit-slow-test-detector": "^2.27.0",
                 "ergebnis/rector-rules": "^1.19.0",
                 "fakerphp/faker": "^1.24.1",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan": "^2.1.55",
                 "phpstan/phpstan-deprecation-rules": "^2.0.5",
-                "phpstan/phpstan-phpunit": "^2.1.1",
+                "phpstan/phpstan-phpunit": "^2.1.2",
                 "phpstan/phpstan-strict-rules": "^2.1.1",
                 "phpunit/phpunit": "^9.6.33",
                 "rector/rector": "^2.7.0",
@@ -1899,7 +1899,7 @@
             "extra": {
                 "class": "Ergebnis\\Composer\\Normalize\\NormalizePlugin",
                 "branch-alias": {
-                    "dev-main": "2.57-dev"
+                    "dev-main": "2.58-dev"
                 },
                 "plugin-optional": true,
                 "composer-normalize": {
@@ -1936,8 +1936,8 @@
                 "security": "https://github.com/ergebnis/composer-normalize/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2026-11-12T21:04:16+00:00",
-            "published-time": "2026-11-12T21:04:22+00:00"
+            "time": "2026-11-19T13:10:46+00:00",
+            "published-time": "2026-11-19T13:10:52+00:00"
         },
         {
             "name": "ergebnis/differ",
@@ -4634,16 +4634,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.5.44",
+            "version": "12.5.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "47d052b58672b016b512974c1139346306c8ca24"
+                "reference": "ca97be2931de6a0adf824da12889cbf935a016e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/47d052b58672b016b512974c1139346306c8ca24",
-                "reference": "47d052b58672b016b512974c1139346306c8ca24",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ca97be2931de6a0adf824da12889cbf935a016e9",
+                "reference": "ca97be2931de6a0adf824da12889cbf935a016e9",
                 "shasum": ""
             },
             "require": {
@@ -4712,7 +4712,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.44"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.45"
             },
             "funding": [
                 {
@@ -4720,8 +4720,8 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-11-13T11:09:06+00:00",
-            "published-time": "2026-11-13T11:09:57+00:00"
+            "time": "2026-11-19T12:16:09+00:00",
+            "published-time": "2026-11-19T12:17:59+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -9637,16 +9637,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "6.20.13",
+            "version": "6.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "9dd07528c4f058df1572d40ab2db5c1566a728f2"
+                "reference": "ef1458bf94f30be89ef01278265f846b254248cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/9dd07528c4f058df1572d40ab2db5c1566a728f2",
-                "reference": "9dd07528c4f058df1572d40ab2db5c1566a728f2",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ef1458bf94f30be89ef01278265f846b254248cb",
+                "reference": "ef1458bf94f30be89ef01278265f846b254248cb",
                 "shasum": ""
             },
             "require": {
@@ -9751,8 +9751,8 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm"
             },
-            "time": "2026-11-18T12:17:11+00:00",
-            "published-time": "2026-11-18T12:31:30+00:00"
+            "time": "2026-11-20T01:41:43+00:00",
+            "published-time": "2026-11-20T02:28:46+00:00"
         },
         {
             "name": "webmozart/assert",
